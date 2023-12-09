@@ -228,7 +228,7 @@ input {
 }
 
 #random-noun::after {
-    content: url("/assets/img/redo.svg");
+    content: url("assets/img/redo.svg");
     zoom: 0.5;
     position: relative;
     top: -1.5rem;
@@ -286,7 +286,7 @@ input {
 }
 
 .input-success::after {
-    content: url("/assets/img/check.svg");
+    content: url("assets/img/check.svg");
     zoom: 0.5;
     position: absolute;
     right: -10%;

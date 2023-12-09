@@ -1,0 +1,339 @@
+/* Import Fonts */
+@font-face {
+    font-family: "Walter Turncoat";
+    src: url("assets/fonts/WalterTurncoat-Regular-subset.woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Global Classes */
+html {
+    background: -webkit-linear-gradient(90deg, #485563 10%, #29323c 90%);
+    background: -moz-linear-gradient(90deg, #485563 10%, #29323c 90%);
+    background: -ms-linear-gradient(90deg, #485563 10%, #29323c 90%);
+    background: -o-linear-gradient(90deg, #485563 10%, #29323c 90%);
+    background: linear-gradient(90deg, #485563 10%, #29323c 90%);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+body {
+    font-size: 1.25rem !important;
+    color: #E8E8E8;
+    font-family: "Walter Turncoat";
+    display: block;
+    scroll-behavior: smooth;
+    /* Chalkboard aesthetic */
+    width: 80%;
+    height: 80%;
+    min-height: auto;
+    margin: 30px auto 0 auto;
+    background-color: #497959;
+    padding: 20px 30px;
+    overflow-y: auto;
+    box-shadow: -1px 2px 2px 0px #555, inset 0 0 10px 0 #555;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    border: #B78240 solid 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Chalkboard aesthetic */
+}
+
+/* Piece of chalk bottom right */
+body:after {
+    content: "";
+    display: block;
+    position: fixed;
+    -webkit-border-radius: 0.1em 0.1em 0 0.1em;
+    -khtml-border-radius: 0.1em 0.1em 0 0.1em;
+    -moz-border-radius: 0.1em 0.1em 0 0.1em;
+    -ms-border-radius: 0.1em 0.1em 0 0.1em;
+    -o-border-radius: 0.1em 0.1em 0 0.1em;
+    border-radius: 0.1em 0.1em 0 0.1em;
+    width: 50px;
+    height: 8px;
+    background: #f1f1f1;
+    top: 80%;
+    margin-top: 75px;
+    margin-right: 60px;
+    right: 5%;
+    box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3)
+  }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-wrapper {
+    padding: 0 7.5rem;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    height: fit-content;
+    width: fit-content;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    border: 1px solid #29323C;
+    border-radius: 4px;
+    background-color: #E8E8E8;
+}
+
+.btn:hover {
+    color: #E8E8E8;
+    transform: scale(0.98);
+    background-color: #29323C;
+}
+
+.btn-primary {
+    padding: 2rem;
+    font-size: 2.5rem;
+    min-width: 13rem;
+}
+
+.btn-secondary {
+    color: #E8E8E8;
+    border: 3px solid #E8E8E8;
+    background-color: transparent;
+}
+
+.btn-secondary:hover {
+
+}
+
+input {
+    font-family: inherit;
+}
+
+.flex-x {
+    display: flex;
+}
+
+.flex-y {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-centered-x {
+    justify-content: center;
+}
+
+.flex-centered-y {
+    align-items: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-col-gap-5rem {
+    column-gap: 5rem;
+}
+
+.flex-col-gap-2rem {
+    column-gap: 2rem;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.text-align-centered {
+    text-align: center;
+}
+
+.width-max-content {
+    width: max-content;
+}
+
+.display-none {
+    display: none;
+}
+
+.margin-bottom-16px {
+    margin-bottom: 16px;
+}
+
+.margin-bottom-64px {
+    margin-bottom: 64px;
+}
+
+.margin-right-16px {
+    margin-right: 16px;
+}
+
+.fade-out {
+    transform: translateY(12px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.fade-in {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.height-100 {
+    height: 100%
+}
+
+.width-100 {
+    width: 100%
+}
+/* Global Classes */
+
+
+
+/* Local Classes */
+.btn-welcome {
+    margin-top: 2rem;
+}
+
+.noun-generator {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+}
+
+#random-noun {
+    font-size: 2.5rem;
+    /* max-width: 80%; */
+    word-break: break-all;
+}
+
+#random-noun::after {
+    content: url("/assets/img/redo.svg");
+    zoom: 0.5;
+    position: relative;
+    top: -1.5rem;
+    /* right: -0.5rem; */
+    cursor: pointer;
+}
+
+#pasapalabra {
+    margin-top: 3rem;
+}
+
+.case-wrapper {
+    width: 20rem;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.case-wrapper > label {
+    font-weight: bold;
+    margin-bottom: 8px
+}
+
+.case-wrapper > input {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 0;
+    margin-bottom: 8px;
+    border: 1px solid black;
+}
+
+.case.gender 
+
+.case-wrapper > span {
+    display: none;
+    font-size: 0.875rem;
+    padding: 12px;
+    font-weight: bold;
+    color: #5C3B3B;
+    background-color: #E0C3E3;
+    border-radius: 4px;
+}
+
+.correct-answers-counter-wrapper {
+    top: 12.5%;
+    right: 12.5%;
+}
+
+#correct-answers-counter {
+    font-size: 3rem;
+}
+
+.input-success input {
+    border-color: #4B5C3B;
+}
+
+.input-success::after {
+    content: url("/assets/img/check.svg");
+    zoom: 0.5;
+    position: absolute;
+    right: -10%;
+    bottom: 20%;
+    transform: translateY(-50%);
+}
+
+.input-error input {
+    border-color: #5C3B3B;
+}
+
+.input-error > span {
+    display: inline-block;
+}
+
+.confirm-message {
+    position: fixed;
+    bottom: 12.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.confirm-message-error {
+    color: #5C3B3B;
+    background-color: #E0C3E3;
+}
+
+.confirm-message-success {
+    color: #497959;
+    background-color: #C8DECF;
+}
+/* Local Classes */
+
+/* Local Classes (Welcome) */
+.welcome {
+    justify-content: center;
+}
+
+.welcome h1 {
+    font-size: 4rem;
+}
+
+.welcome button {
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+/* Local Classes (Welcome) */

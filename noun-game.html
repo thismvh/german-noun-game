@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noun Game</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/index.js"></script>
+    <script defer src="/formSubmit.js"></script>
+</head>
+<body>
+    <main id="main" class="page-wrapper">
+        <div class="noun-generator flex-y flex-centered-y">
+            <div class="correct-answers-counter-wrapper flex-x flex-col-gap-2rem pos-absolute">
+                <div class="flex-y flex-centered-y">
+                    <h1 id="correct-answers-counter">0</h1>
+                    <p>Aciertos</p>
+                </div>
+            </div>
+            <form id="noun-form" class="width-100">
+                <div class="flex-y flex-centered-y margin-bottom-16px">
+                    <div class="pos-relative width-100">
+                        <h2 id="random-noun" class="text-align-centered margin-bottom-64px">This is a random noun!</h2>
+                        <!-- <img class="noun-pass pos-absolute" src="/assets/img/redo.svg" srcset="" width="0" height="0" alt=""> -->
+                    </div>
+                    <div>
+                        <div class="flex-x flex-col-gap-2rem">
+                            <a href="#der"><button name="submit" type="submit" class="noun-submit btn btn-primary margin-right-16px">Der</button></a>
+                            <a href="#die"><button name="submit" type="submit" class="noun-submit btn btn-primary margin-right-16px">Die</button></a>
+                            <a href="#das"><button name="submit" type="submit" class="noun-submit btn btn-primary">Das</button></a>
+                            <!-- <div class="case-wrapper flex-y">
+                                <label class="case gender width-max-content" for="gender">Artikel</label>
+                                <input name="gender" id="gender-input" data-mismatch="Lo siento, pero no. Es: " placeholder="der/die/das">
+                                <span id="gender-input-error" class="error-message"></span>
+                            </div> -->
+                        </div>
+                        <!-- <div class="case-wrapper flex-y">
+                            <label class="case gender width-max-content" for="gender">Artikel</label>
+                            <input name="gender" id="gender-input" data-mismatch="Lo siento, pero no. Es: " placeholder="der/die/das">
+                            <span id="gender-input-error" class="error-message"></span>
+                        </div> -->
+                        <div class="flex-x flex-col-gap-5rem">
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case nomsin width-max-content" for="nomsin">Nominativ Singular</label>
+                                <input name="nomsin" id="nomsin-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="nomsin-input-error" class="error-message"></span>
+                            </div>
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case nomplu width-max-content" for="nomplu">Nominativ Plural</label>
+                                <input name="nomplu" id="nomplu-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="nomplu-input-error" class="error-message"></span>
+                            </div>
+                        </div>
+                        <div class="flex-x flex-col-gap-5rem">
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case gensin width-max-content" for="gensin">Genitiv Singular</label>
+                                <input name="gensin" id="gensin-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="gensin-input-error" class="error-message"></span>
+                            </div>
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case genplu width-max-content" for="genplu">Genitiv Plural</label>
+                                <input name="genplu" id="genplu-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="genplu-input-error" class="error-message"></span>
+                            </div>
+                        </div>
+                        <div class="flex-x flex-col-gap-5rem">
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case datsin width-max-content" for="datsin">Dativ Singular</label>
+                                <input name="datsin" id="datsin-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="datsin-input-error" class="error-message"></span>
+                            </div>
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case datplu width-max-content" for="datplu">Dativ Plural</label>
+                                <input name="datplu" id="datplu-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="datplu-input-error" class="error-message"></span>
+                            </div>
+                        </div>
+                        <div class="flex-x flex-col-gap-5rem">
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case akksin width-max-content" for="akksin">Akkusativ Singular</label>
+                                <input name="akksin" id="akksin-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="akksin-input-error" class="error-message"></span>
+                            </div>
+                            <div class="case-wrapper flex-y" style="display: none">
+                                <label class="case akkplu width-max-content" for="akkplu">Akkusativ Plural</label>
+                                <input name="akkplu" id="akkplu-input" data-mismatch="Lo siento, pero no. Es: " placeholder="">
+                                <span id="akkplu-input-error" class="error-message"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-x flex-centered-x flex-centered-y flex-wrap flex-row-gap-xs">
+                    <!-- <a href="#main"><button name="submit" type="submit" class="noun-submit btn margin-right-16px">Comprobar</button></a> -->
+                    <a href="#main"><button id="pasapalabra" name="pass" type="button" class="noun-pass btn btn-secondary margin-right-m">Pasapalabra!</button></a>
+                    <p id="form-success" class="confirm-message confirm-message-success fade-out display-none">Toma ya! Todo correcto! Venga, dale otra!</p>
+                    <p id="form-error" class="confirm-message confirm-message-error fade-out display-none">Uuuuy, tamos un poco atontaos! Venga va, prueba otra vez!</p>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

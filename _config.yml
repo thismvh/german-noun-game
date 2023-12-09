@@ -1,0 +1,2 @@
+# We have to define a dummy Jekyll theme for the Github Pages deploy to work
+theme: jekyll-theme-minimal
